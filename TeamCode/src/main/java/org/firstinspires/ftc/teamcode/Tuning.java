@@ -8,6 +8,7 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 import org.firstinspires.ftc.teamcode.pedroPathing.procedures.ForesightTuner;
 import org.firstinspires.ftc.teamcode.pedroPathing.procedures.MecanumTuner;
 import org.firstinspires.ftc.teamcode.pedroPathing.procedures.PinpointTuner;
+import org.firstinspires.ftc.teamcode.pedroPathing.procedures.Tests;
 
 public class Tuning {
     @Tuner
@@ -23,5 +24,10 @@ public class Tuning {
     @Tuner
     public static Procedure foresightTuner() {
         return new ForesightTuner((hardwareMap) -> new PinpointLocalizer(hardwareMap, Constants.localizerConfig), (hardwareMap) -> new Mecanum(hardwareMap, Constants.driveConfig));
+    }
+
+    @Tuner
+    public static Procedure tests() {
+        return new Tests(Constants::create);
     }
 }
