@@ -296,7 +296,7 @@ class ForwardDeceleration extends TuningOpMode<Double> {
             previousVelocity = currentVelocity;
             previousTimeNano = currentTimeNano;
 
-            if (Math.abs(currentVelocity) < 0.25) {
+            if (Math.abs(currentVelocity) <= 1) {
                 end = true;
             }
         }
@@ -384,7 +384,7 @@ class StrafeDeceleration extends TuningOpMode<Double> {
             previousVelocity = currentVelocity;
             previousTimeNano = currentTimeNano;
 
-            if (Math.abs(currentVelocity) < 0.25) {
+            if (Math.abs(currentVelocity) <= 1) {
                 end = true;
             }
         }
