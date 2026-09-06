@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.procedures;
+package org.firstinspires.ftc.teamcode.pedro.procedures;
 
 import com.pedropathing.math.Pose;
 import com.pedropathing.revhub.localizers.OTOSConfig;
@@ -39,7 +39,7 @@ public class OTOSTuner extends Procedure {
         result("xOffset", offsets.get(0));
         result("yOffset", offsets.get(1));
 
-        code(Language.JAVA,"public static OTOSConfig config = new OTOSConfig(c -> {\n" +
+        code(Language.JAVA,"public static OTOSConfig localizerConfig = new OTOSConfig(c -> {\n" +
                 "    c.name.set(\"" + name.get() + "\");\n" +
                 "    c.linearScalar.set(" + linearScalar + ");\n" +
                 "    c.angularScalar.set(" + angularScalar + ");\n" +
