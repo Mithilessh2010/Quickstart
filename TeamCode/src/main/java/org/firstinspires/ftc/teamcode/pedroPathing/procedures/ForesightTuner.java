@@ -667,7 +667,7 @@ class ForwardBraking extends TuningOpMode<List<Double>> {
     private final double headingKP;
 
     private double[] POWERS;
-    public double MAX_BRAKE_TIME = 2.0;
+    public double MAX_BRAKE_TIME = 7.0;
     public int trials = 5;
     public double maxPower = 0.7;
     public double minPower = 0.3;
@@ -735,7 +735,7 @@ class ForwardBraking extends TuningOpMode<List<Double>> {
                     break;
                 }
                 case BRAKE: {
-                    if (localizer.velocity().toVector2D().magnitude() > 0.1 && timer.seconds() < MAX_BRAKE_TIME) {
+                    if (localizer.velocity().toVector2D().magnitude() > 0.25 && timer.seconds() < MAX_BRAKE_TIME) {
                         brake(drivetrain, localizer);
                         break;
                     }
@@ -831,7 +831,7 @@ class StrafeBraking extends TuningOpMode<List<Double>> {
     private final double headingKP;
 
     private double[] POWERS;
-    public double MAX_BRAKE_TIME = 6.0;
+    public double MAX_BRAKE_TIME = 7.0;
     public  int trials = 5;
     public double maxPower = 1;
     public double minPower = 0.3;
@@ -900,7 +900,7 @@ class StrafeBraking extends TuningOpMode<List<Double>> {
                     break;
                 }
                 case BRAKE: {
-                    if (localizer.velocity().toVector2D().magnitude() > 0.1 && timer.seconds() < MAX_BRAKE_TIME) {
+                    if (localizer.velocity().toVector2D().magnitude() > 0.25 && timer.seconds() < MAX_BRAKE_TIME) {
                         brake(drivetrain, localizer);
                         break;
                     }
