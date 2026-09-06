@@ -52,7 +52,7 @@ public class ForesightTuner extends Procedure {
         double headingQuadratic = headingBraking.get(1);
 
         Inputs distanceBrakingInput = inputs("Distance", "The distance to drive in inches for the Forward and Strafe Braking Identifiers");
-        Inputs.Field<Double> distanceBraking = distanceBrakingInput.d("Distance").withDefault(48.0);
+        Inputs.Field<Double> distanceBraking = distanceBrakingInput.d("Distance").withDefault(36.0);
         awaitInputs(distanceBrakingInput);
 
         List<Double> forwardBraking = runOpMode(new ForwardBraking(localizerFunction, drivetrainFunction, headingLinear, headingQuadratic, heading, distanceBraking.get()));
@@ -744,6 +744,7 @@ class ForwardBraking extends TuningOpMode<List<Double>> {
                     break;
                 }
                 case WAIT: {
+                    drivetrain.stop();
                     if (timer.seconds() > IDLE_SECONDS) state = State.DRIVE;
                     break;
                 }
@@ -909,6 +910,7 @@ class StrafeBraking extends TuningOpMode<List<Double>> {
                     break;
                 }
                 case WAIT: {
+                    drivetrain.stop();
                     if (timer.seconds() > IDLE_SECONDS) state = State.DRIVE;
                     break;
                 }
